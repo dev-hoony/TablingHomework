@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home_graph"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="@string/navigation_home"/>
+
+    <item
+        android:id="@+id/list_graph"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="@string/navigation_search"/>
+
+    <item
+        android:id="@+id/like_graph"
+        android:icon="@drawable/selector_ic_favorite"
+        android:title="@string/navigation_like"/>
+
+    <item
+        android:id="@+id/profile_graph"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="@string/navigation_my"/>
+
+</menu>

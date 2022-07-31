@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TablingHomework</string>
+
+    <string name="navigation_home">홈</string>
+    <string name="navigation_search">검색</string>
+    <string name="navigation_like">관심매장</string>
+    <string name="navigation_my">마이</string>
 </resources>

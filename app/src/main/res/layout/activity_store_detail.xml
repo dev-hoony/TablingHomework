@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.example.tablinghomework.presentation.featrue.like.StoreView" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_store_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintDimensionRatio="H,4:3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        loadFromUrl="@{data.thumbnail}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        tools:src="@mipmap/ic_launcher" />
+
+                    <TextView
+                        visible="@{data.isNoWaiting}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|start"
+                        android:background="@drawable/bg_no_waiting"
+                        android:text="대기 없음"
+                        android:textColor="@android:color/white" />
+
+                </androidx.cardview.widget.CardView>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="6dp"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cv_store_image">
+
+
+                    <TextView
+                        android:id="@+id/tv_store_category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{data.category}"
+                        app:layout_constraintStart_toEndOf="@id/cv_store_image"
+                        app:layout_constraintTop_toTopOf="@id/tv_store_category"
+                        tools:text="한식" />
+
+                    <TextView
+                        android:id="@+id/tv_store_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{data.name}"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="@id/tv_store_category"
+                        app:layout_constraintTop_toBottomOf="@id/tv_store_category"
+                        tools:text="은화계 신당점" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_star_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="@id/tv_store_category"
+                        app:layout_constraintTop_toBottomOf="@id/tv_store_name">
+
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_baseline_star_24" />
+
+                        <TextView
+                            android:id="@+id/tv_star_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:text="@{data.ratingCount}"
+                            android:textColor="@color/black"
+                            tools:text="0.8" />
+
+                        <TextView
+                            android:id="@+id/tv_review_count"
+                            reviewCount="@{data.reviewCount}"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:textColor="@color/black"
+                            tools:text="(300+)" />
+
+                        <TextView
+                            android:id="@+id/tv_store_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:text="@{data.address}"
+                            tools:text="독도참치울릉읍" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/layout_line_up"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_store_image"
+                        app:layout_constraintStart_toStartOf="@id/tv_store_category"
+                        app:layout_constraintTop_toBottomOf="@id/layout_star_count"
+                        app:layout_constraintVertical_bias="0.0">
+
+
+                        <TextView
+                            android:id="@+id/tv_remote_waiting"
+                            visible="@{data.isRemoteWaiting}"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_book_waiting"
+                            android:text="원격줄서기"
+                            android:textColor="@color/light_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_quick_booking"
+                            visible="@{data.isQuickBooking}"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:background="@drawable/bg_book_waiting"
+                            android:text="즉시예약"
+                            android:textColor="@color/light_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_wish"
+                            wishStatus="@{data.wished}"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:background="@drawable/bg_book_waiting"
+                            android:textColor="@color/light_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
