@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="8dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_store_image"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="H,4:3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            tools:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:background="@color/black_alpha_60"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp"
+            android:text="대기 없음"
+            android:textColor="@android:color/white" />
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/cv_store_image"
+        app:layout_constraintStart_toEndOf="@id/cv_store_image"
+        app:layout_constraintTop_toTopOf="@id/cv_store_image">
+
+
+        <TextView
+            android:id="@+id/tv_store_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/cv_store_image"
+            app:layout_constraintTop_toTopOf="@id/tv_store_category"
+            tools:text="한식" />
+
+        <TextView
+            android:id="@+id/tv_store_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/tv_store_category"
+            app:layout_constraintTop_toBottomOf="@id/tv_store_category"
+            tools:text="은화계 신당점" />
+
+        <LinearLayout
+            android:id="@+id/layout_star_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/tv_store_category"
+            app:layout_constraintTop_toBottomOf="@id/tv_store_name">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_star_24" />
+
+            <TextView
+                android:id="@+id/tv_star_and_review_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="6dp"
+                android:textColor="@color/black"
+                tools:text="0.8 (300+)" />
+
+            <TextView
+                android:id="@+id/tv_store_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="독도참치울릉읍" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layout_line_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/cv_store_image"
+            app:layout_constraintStart_toStartOf="@id/tv_store_category"
+            app:layout_constraintTop_toBottomOf="@id/layout_star_count"
+            app:layout_constraintVertical_bias="0.0">
+
+            <!--        <Button-->
+            <!--            android:id="@+id/btn_line_up"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            tools:text="원격줄서기"-->
+            <!--            android:padding="0dp"-->
+            <!--            android:textSize="12sp"/>-->
+
+            <!--        <Button-->
+            <!--            android:id="@+id/btn_book_direct"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="40dp"-->
+            <!--            tools:text="즉시예약"-->
+            <!--            android:paddingHorizontal="0dp"-->
+            <!--            android:textSize="12sp"/>-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#f3f4f6"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="6dp"
+                android:textColor="#64768f"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="원격줄서기" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:background="#f3f4f6"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="6dp"
+                android:textColor="#64768f"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="즉시예약" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
